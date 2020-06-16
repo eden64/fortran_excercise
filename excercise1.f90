@@ -1,18 +1,25 @@
 program excercise1
     implicit none
-    real  :: DO_conc,T(degree_c)
-    integer::i
-     do i= 5,30,5
-       T(degree_c)=real(i)
-       DO_conc= Dissolved Oxygen(mg/l)
-        write(*,30)Dissolved oxygen 
-       30 format(F6.0)
+    real  :: temperature, DO_conc 
+    integer:: i
+    
+     open(unit=10, file= 'satureted_DO.csv')
+    
+     do i= 5, 30, 5
+       temperature = real(i)
+       DO_conc = calculate_DO(temperature)
+        write(10, 100) i, DO_conc
+       100 format(I6, ',',F6.1)
      end do
+
+
      contains
-     real function calculate dissolved oxygen 
-     real, intent (in) :: T(degree_c)
-    dissolved oxygen(mg/l)=14.652-0.41022*T(degree_c)+0.00799*T^2-0.000077774*T^3
-    end function calculate dissolved oxygen
+     real function calculate_DO(temperature)
+     real, intent (in) :: temperature
+    calculate_DO = 14.652  - 0.41022*temperature & 
+                           + 0.007991*Temperature**2 & 
+                           - 0.000077774*Temperature**3
+    end function calculate_DO
 
 
 end program excercise1
