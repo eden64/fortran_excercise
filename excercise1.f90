@@ -9,7 +9,7 @@ program excercise1
        temperature = real(i)
        DO_conc = calculate_DO(temperature)
         write(10, 100) i, DO_conc
-       100 format(I6, ',',F6.1)
+       100 format(I6, ',',F6.2)
      end do
 
 
