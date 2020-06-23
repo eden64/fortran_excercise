@@ -55,7 +55,7 @@ use group_function
       conc_bod(i+1) = conc_bod(i)+l/6.0*(k1B+2.0*k2B+2.0*k3B+k4B)
       conc_do(i+1) = conc_do(i)+l/6.0*(k1D+2.0*k2D+2.0*k3D+k4D)
       
-      conc_bod_a(i+1) = bod_analytical(l*(i+1))
+      conc_bod_a(i+1) = bod_analytical (l*(i+1))
       conc_do_a(i+1) = do_analytical(l*(i+1))
       
       error_bod = error_bod + abs(conc_bod_a(i+1) - conc_bod(i+1))
